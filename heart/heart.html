@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      padding: 0;
+      margin: 0;
+    }
+    audio {
+      display: none;
+    }
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      width: 1em;
+      height: 1em;
+      color: red;
+      background-color: currentColor;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      animation: heart 1.5s infinite alternate cubic-bezier(0.5, 1.7, 0.5, 1.5);
+    }
+    @keyframes heart {
+      to {
+        box-shadow:
+      /* 左边上方2个点 */ -3.3em -3.3em, -2.2em -3.3em,
+          /* 右边上方2个点 */ 2.2em -3.3em, 3.3em -3.3em,
+          /* 左边第二排四个点 */ -4.4em -2.2em, -3.3em -2.2em, -2.2em -2.2em,
+          -1.1em -2.2em, /* 右边第二排四个点 */ 1.1em -2.2em, 2.2em -2.2em,
+          3.3em -2.2em, 4.4em -2.2em, /* 左边第三排四个点 */ -4.4em -1.1em,
+          -3.3em -1.1em, -2.2em -1.1em, -1.1em -1.1em, 0em -1.1em,
+          /* 右边第三排四个点 */ 1.1em -1.1em, 2.2em -1.1em, 3.3em -1.1em,
+          4.4em -1.1em, /* 左边第四排四个点 */ -4.4em -0em, -3.3em -0em,
+          -2.2em -0em, -1.1em -0em, /* 右边第四排四个点 */ 1.1em -0em,
+          2.2em -0em, 3.3em -0em, 4.4em -0em,
+          /* 左边第五排三个点 */ -3.3em 1.1em, -2.2em 1.1em, -1.1em 1.1em,
+          0em 1.1em, /* 右边第五排三个点 */ 1.1em 1.1em, 2.2em 1.1em,
+          3.3em 1.1em, /* 左边第六排两个点 */ -2.2em 2.2em, -1.1em 2.2em,
+          0em 2.2em, /* 左边第六排两个点 */ 1.1em 2.2em, 2.2em 2.2em,
+          /* 右边第七排一个点 */ -1.1em 3.3em, 0em 3.3em,
+          /* 右边第七排一个点 */ 1.1em 3.3em, /* 最后一个点 */ 0em 4.4em;
+        color: hsla(0, 100%, 50%, 0.6);
+      }
+    }
+  </style>
+  <body>
+    <audio
+      id="myaudio"
+      src="./六哲 - 朋友名义.mp3"
+      controls="controls"
+      autoplay="autoplay"
+      loop
+    ></audio>
+    <div class="heart"></div>
+    <script>
+      window.onload = function () {
+        //要执行的js代码段
+        var myAuto = document.getElementById("myaudio");
+        myAuto.play();
+      };
+    </script>
+  </body>
+</html>
